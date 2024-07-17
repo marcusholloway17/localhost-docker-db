@@ -1,12 +1,12 @@
-version: '3'
+version: '3.3'
 
-services: 
+services:
   mysql:
     image: mysql:latest
-    restart: on-failure 
+    restart: on-failure
     environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: true
-      MYSQL_ROOT_PASSWORD: ""
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      MYSQL_ROOT_PASSWORD: ''
     ports:
       - "3306:3306"
     volumes:
@@ -14,11 +14,11 @@ services:
 
   phpmyadmin:
     image: phpmyadmin:latest
-    restart: on-failure 
+    restart: on-failure
     environment:
       PMA_HOST: mysql
       PMA_USER: root
-      PMA_PASSWORD: ""
+      PMA_PASSWORD: ''
     ports:
       - "8080:80"
     depends_on:
