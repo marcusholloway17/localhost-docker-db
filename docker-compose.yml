@@ -5,7 +5,7 @@ services:
     image: mysql:latest
     restart: on-failure
     environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'no'
       MYSQL_ROOT_PASSWORD: ''
     ports:
       - "3306:3306"
